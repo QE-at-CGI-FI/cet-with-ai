@@ -1,10 +1,11 @@
 # Contemporary Exploratory Testing with AI
-Repository for experimenting with contemporary exploratory testing with AI, community batch March 2026. 
 
-- AI as **external imagination**. 
-- Results (actionable insights) are more important than intermediate artifacts. 
+Repository for experimenting with contemporary exploratory testing with AI, community batch March 2026.
+
+- AI as **external imagination**.
+- Results (actionable insights) are more important than intermediate artifacts.
 - Artifacts are an output of testing, to support future with knowledge captured at time we know the best.
-- Executable specifications of intent are an asset that invites us to explore. 
+- Executable specifications of intent are an asset that invites us to explore.
 
 ## Getting started
 
@@ -22,5 +23,18 @@ Install playwright CLI
 
 https://epictestquest.github.io/the-Potion-Shop/
 
+This test site is by the brilliant Christine Pinto, created for #28DaysOfTesting challenge.
+The original repo: https://github.com/EpicTestQuest/the-Potion-Shop includes no license, meaning all rights are reserved. The site is created with Claude Code, and currently 1st copyright cases indicate that prompted apps aren't protected by copyright in the same way but this will unfold.
+This repo is used for community teaching purposes only, and code is made available for ease of showcasing multifaceted quality approaches.
+
+## Local development
+
+# Using Python
+
+python -m http.server 8000
+
+# Using Node.js
+
+npx serve
 
 ## Prompts
