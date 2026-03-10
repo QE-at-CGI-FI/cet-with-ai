@@ -3,6 +3,7 @@
 Repository for experimenting with contemporary exploratory testing with AI, community batch March 2026.
 
 - AI as **external imagination**.
+- AI as **task expansion**. 
 - Results (actionable insights) are more important than intermediate artifacts.
 - Artifacts are an output of testing, to support future with knowledge captured at time we know the best.
 - Executable specifications of intent are an asset that invites us to explore.
