@@ -1,0 +1,23 @@
+{
+  "name": "cet-with-ai",
+  "version": "1.0.0",
+  "description": "Repository for experimenting with contemporary exploratory testing with AI, community batch March 2026.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QE-at-CGI-FI/cet-with-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/QE-at-CGI-FI/cet-with-ai/issues"
+  },
+  "homepage": "https://github.com/QE-at-CGI-FI/cet-with-ai#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.4.0"
+  }
+}
