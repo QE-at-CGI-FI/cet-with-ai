@@ -196,8 +196,8 @@ function updateOrderSummary() {
     const summarySubtotal = document.getElementById('summary-subtotal');
     summarySubtotal.querySelector('.item-price').textContent = subtotal.toFixed(2) + ' gold';
 
-    // Calculate total with brewing fee (note: delivery not included)
-    let total = subtotal + BREWING_FEE;
+    // Calculate total with brewing fee and delivery price
+    let total = subtotal + BREWING_FEE + orderState.deliveryPrice;
 
     // Update total display
     const summaryTotal = document.getElementById('summary-total');
