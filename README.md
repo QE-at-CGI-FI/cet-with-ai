@@ -21,6 +21,8 @@ Install playwright CLI
 
 ## Test site
 
+https://qe-at-cgi-fi.github.io/cet-with-ai/potion-shop/ 
+
 https://epictestquest.github.io/the-Potion-Shop/
 
 This test site is by the brilliant Christine Pinto, created for #28DaysOfTesting challenge.
