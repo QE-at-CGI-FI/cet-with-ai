@@ -1,0 +1,13 @@
+{
+  "embeddingModel": "transformer",
+  "hnswConfig": {
+    "M": 8,
+    "efConstruction": 100,
+    "efSearch": 50
+  },
+  "qualityThreshold": 0.7,
+  "promotionThreshold": 3,
+  "databasePath": "/Users/maaretp/Documents/cgi-code/cet-with-ai/.agentic-qe/data/memory.db",
+  "hnswIndexPath": "/Users/maaretp/Documents/cgi-code/cet-with-ai/.agentic-qe/data/hnsw/index.bin",
+  "initialized": "2026-04-01T17:34:20.566Z"
+}

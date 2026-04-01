@@ -1,0 +1,49 @@
+{
+  "lineCoverage": 79.1,
+  "branchCoverage": 100,
+  "functionCoverage": 62.5,
+  "statementCoverage": 79.1,
+  "totalFiles": 2,
+  "coverageByFile": [
+    {
+      "file": "potion-shop/js/app.js",
+      "lineCoverage": 78.1,
+      "branchCoverage": 100,
+      "functionCoverage": 66.7
+    },
+    {
+      "file": "potion-shop/playwright.config.ts",
+      "lineCoverage": 82.5,
+      "branchCoverage": 100,
+      "functionCoverage": 0
+    }
+  ],
+  "gaps": [
+    {
+      "file": "potion-shop/playwright.config.ts",
+      "lines": [
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "risk": "medium"
+    }
+  ],
+  "meetsThreshold": true,
+  "recommendations": [
+    "Function coverage is below 70%. Ensure all exported functions have tests.",
+    "1 file(s) have more than 50 uncovered lines. Consider breaking them into smaller, testable modules."
+  ],
+  "algorithm": "sublinear-O(log n)"
+}

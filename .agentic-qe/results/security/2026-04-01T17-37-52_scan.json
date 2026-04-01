@@ -1,0 +1,24 @@
+{
+  "vulnerabilities": 0,
+  "critical": 0,
+  "high": 0,
+  "medium": 0,
+  "low": 0,
+  "informational": 0,
+  "topVulnerabilities": [],
+  "recommendations": [
+    "No vulnerabilities found - maintain current security practices"
+  ],
+  "scanTypes": {
+    "sast": true,
+    "dast": false
+  },
+  "filesScanned": 3,
+  "jstsFilesScanned": 3,
+  "otherFilesScanned": 0,
+  "coverage": {
+    "filesScanned": 3,
+    "linesScanned": 348,
+    "rulesApplied": 83
+  }
+}

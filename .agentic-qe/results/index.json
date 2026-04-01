@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "created": "2026-04-01T17:37:52.702Z",
+  "updated": "2026-04-01T17:38:04.589Z",
+  "results": [
+    {
+      "id": "task_66be0fa3-80f7-4cd4-8186-b63e6fe0869d",
+      "type": "analyze-coverage",
+      "timestamp": "2026-04-01T17:37:52.699Z",
+      "files": [
+        "coverage/2026-04-01T17-37-52_coverage.json",
+        "coverage/2026-04-01T17-37-52_coverage.lcov",
+        "coverage/2026-04-01T17-37-52_report.md"
+      ],
+      "summary": {
+        "lineCoverage": 79.1,
+        "branchCoverage": 100
+      }
+    },
+    {
+      "id": "task_53a3c3b0-ffc2-4ca1-9ebe-64585f181753",
+      "type": "scan-security",
+      "timestamp": "2026-04-01T17:37:52.791Z",
+      "files": [
+        "security/2026-04-01T17-37-52_scan.json",
+        "security/2026-04-01T17-37-52_scan.sarif",
+        "security/2026-04-01T17-37-52_report.md"
+      ],
+      "summary": {
+        "vulnerabilities": 0,
+        "critical": 0,
+        "high": 0
+      }
+    },
+    {
+      "id": "task_bf2f1671-e634-4a34-9343-85b085e1e5c4",
+      "type": "assess-quality",
+      "timestamp": "2026-04-01T17:38:04.493Z",
+      "files": [
+        "quality/2026-04-01T17-38-04_assessment.json",
+        "quality/2026-04-01T17-38-04_report.md"
+      ],
+      "summary": {
+        "qualityScore": 61,
+        "passed": false
+      }
+    },
+    {
+      "id": "task_cd77b7f1-dba2-435f-be51-f40d55b2c478",
+      "type": "predict-defects",
+      "timestamp": "2026-04-01T17:38:04.588Z",
+      "files": [
+        "defects/2026-04-01T17-38-04_prediction.json"
+      ],
+      "summary": {}
+    }
+  ],
+  "trends": {}
+}

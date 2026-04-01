@@ -1,0 +1,35 @@
+{
+  "qualityScore": 61,
+  "passed": false,
+  "threshold": 80,
+  "metrics": {
+    "coverage": 79.12,
+    "complexity": 17.1,
+    "maintainability": 38.35,
+    "security": 85
+  },
+  "recommendations": [
+    "[critical] Overall Quality Improvement Needed: Overall quality score is 61. Multiple areas need attention to bring code quality to acceptable levels.",
+    "[warning] Reduce Code Complexity: Average cyclomatic complexity is 17.1. Consider refactoring complex functions.",
+    "[warning] Improve Maintainability: Maintainability index is 38.35. Consider improving code structure and documentation.",
+    "[improvement] Increase Test Coverage: Current coverage is 79.12%. Aim for at least 80% coverage to ensure code reliability."
+  ],
+  "trends": [
+    {
+      "metric": "complexity",
+      "direction": "stable",
+      "dataPoints": 0
+    },
+    {
+      "metric": "maintainability",
+      "direction": "stable",
+      "dataPoints": 0
+    },
+    {
+      "metric": "coverage",
+      "direction": "stable",
+      "dataPoints": 0
+    }
+  ],
+  "filesAnalyzed": 10
+}

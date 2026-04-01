@@ -20,6 +20,10 @@ Install playwright CLI
 `npm install -g @playwright/cli@latest`
 `playwright-cli install --skills`
 
+Agentic QE Fleet
+`npm install -g agentic-qe`
+init with `aqe init --auto` or `aqe init --with-copilot`
+
 ## Test site
 
 https://qe-at-cgi-fi.github.io/cet-with-ai/potion-shop/ 
@@ -45,3 +49,10 @@ npx serve
 Create file bug_reports.txt by going through site https://epictestquest.github.io/the-Potion-Shop/ using playwright and identifying as many things to mention as possible problems or improvement suggestions as you can identify. Don't use vision.
 
 Compare bug_reports and rikard_bugs for identified issues. List which are not in both lists, and identify which list found them.
+
+Use qe-queen-coordinator to run full quality assessment:
+1. Generate tests for src/services/*.ts
+2. Analyze coverage gaps with risk scoring
+3. Run security scan
+4. Validate quality gate at 90% threshold
+5. Provide deployment recommendation

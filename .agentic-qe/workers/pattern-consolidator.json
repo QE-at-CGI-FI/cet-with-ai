@@ -1,0 +1,8 @@
+{
+  "name": "pattern-consolidator",
+  "enabled": true,
+  "interval": 1800000,
+  "projectRoot": "/Users/maaretp/Documents/cgi-code/cet-with-ai",
+  "dataDir": "/Users/maaretp/Documents/cgi-code/cet-with-ai/.agentic-qe/data",
+  "createdAt": "2026-04-01T17:34:20.989Z"
+}

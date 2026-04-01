@@ -1,0 +1,8 @@
+{
+  "predictedDefects": [],
+  "riskScore": 0,
+  "recommendations": [
+    "No files exceeded the defect probability threshold — code looks healthy"
+  ],
+  "filesAnalyzed": 13
+}
