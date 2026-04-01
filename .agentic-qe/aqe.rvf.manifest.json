@@ -1,7 +1,7 @@
 {
   "version": "3.0",
   "format": "rvf",
-  "exportedAt": "2026-04-01T18:07:53.922Z",
+  "exportedAt": "2026-04-01T18:52:11.243Z",
   "sourceDb": "/Users/maaretp/Documents/cgi-code/cet-with-ai/.agentic-qe/memory.db",
   "stats": {
     "patternCount": 107,
@@ -9,7 +9,7 @@
     "qValueCount": 0,
     "dreamInsightCount": 10,
     "witnessChainLength": 85,
-    "totalRecords": 1351
+    "totalRecords": 1375
   },
   "domains": [
     "chaos-resilience",
@@ -25,14 +25,14 @@
     "test-generation",
     "visual-accessibility"
   ],
-  "checksum": "cb2c781262aa3c1f48a4636d09d134aa3beae76af6743e96013dc97475b5a9b2",
+  "checksum": "1ab1cb1066d348c0b035f69e2c7a1122ae7a8e9a9de1a42524ced43d09effbaf",
   "rvfStatus": {
     "totalVectors": 90,
     "totalSegments": 6,
-    "fileSizeBytes": 934469
+    "fileSizeBytes": 948312
   },
   "lineage": {
-    "fileId": "b13e6befa64fcd83b9f94e7e1b0348a8",
+    "fileId": "b1f6873f5bbad083b9f94e7e1b030e89",
     "parentId": "00000000000000000000000000000000",
     "lineageDepth": 0
   }

@@ -28,14 +28,14 @@
         <section class="featured-section">
             <div class="featured-potion">
                 <div class="discount-badge">15% OFF</div>
-                <img src="images/featured-potion.png" class="featured-image">
+                <img src="images/featured-potion.png" class="featured-image" alt="Elixir of Eternal Focus - Featured Potion of the Week">
                 <div class="featured-content">
                     <span class="featured-label">✨ Potion of the Week</span>
                     <h2 class="featured-name">Elixir of Eternal Focus</h2>
                     <p class="featured-description">Perfect for wizards preparing for exams or lengthy enchantments. Enhances concentration for up to 12 hours.</p>
                     <div class="featured-price">
                         <span class="original-price">40 gold</span>
-                        <span class="sale-price">36 gold</span>
+                        <span class="sale-price">34 gold</span>
                     </div>
                     <button class="btn btn-featured" onclick="addFeaturedToOrder()">Add to Order</button>
                 </div>
@@ -181,7 +181,7 @@
                     <h3>Quantity</h3>
                     <div class="quantity-selector">
                         <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
-                        <input type="number" id="quantity" value="1" min="1" max="99" tabindex="-1">
+                        <input type="number" id="quantity" value="1" min="1" max="99">
                         <button class="qty-btn" onclick="changeQuantity(1)">+</button>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                         <input type="text" id="customer-name" placeholder="e.g., Gandalf the Grey" required>
                     </div>
                     <div class="form-group">
-                        <div class="label-placeholder"></div>
+                        <label for="contact-crystal">Contact Crystal</label>
                         <input type="text" id="contact-crystal" placeholder="Contact Crystal (email)">
                     </div>
                 </div>
@@ -340,8 +340,8 @@
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h5>Shop Hours</h5>
-                <p>Open dusk to dawn</p>
+                <h4>Shop Hours</h4>
+                <p>Open dawn to dusk</p>
                 <p>Closed on full moons</p>
                 <p>& during dragon migrations</p>
             </div>
@@ -361,13 +361,13 @@
                 <h4>Follow Us</h4>
                 <div class="social-links">
                     <a href="#" class="social-link">SpellBook</a>
-                    <a href="https://wandergram.fake/enchanted-brew" class="social-link" target="_blank">Wandergram</a>
+                    <a href="#" class="social-link">Wandergram</a>
                     <a href="#" class="social-link">Potion-terest</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 1247-2024 The Enchanted Brew Shop. All rights reserved.</p>
+            <p>© 1247-2026 The Enchanted Brew Shop. All rights reserved.</p>
             <p class="guarantee">✨ Satisfaction guaranteed or your gold back ✨</p>
             <p class="attribution">Site created by Christine Pinto, edited for purposes of illustrating task expansion to tester role AI brings about.</p>
         </div>

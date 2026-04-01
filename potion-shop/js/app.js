@@ -128,8 +128,10 @@ function handlePotencyChange(event) {
 }
 
 function handleQuantityChange(event) {
-    const value = event.target.value;
-    orderState.quantity = parseInt(value) || 1;
+    const raw = parseInt(event.target.value) || 1;
+    const clamped = Math.max(1, Math.min(99, raw));
+    event.target.value = clamped;
+    orderState.quantity = clamped;
     updateOrderSummary();
 }
 
@@ -186,11 +188,11 @@ function updateOrderSummary() {
     // Add featured potion if added
     let featuredTotal = 0;
     if (orderState.featuredAdded) {
-        featuredTotal = 36;
+        featuredTotal = 34; // 15% off 40 gold = 34 gold
     }
 
-    // Calculate subtotal
-    let subtotal = (potionSubtotal * orderState.quantity) + orderState.ingredientsTotal + featuredTotal;
+    // Calculate subtotal (ingredients scale with quantity)
+    let subtotal = (potionSubtotal + orderState.ingredientsTotal) * orderState.quantity + featuredTotal;
 
     // Update subtotal display
     const summarySubtotal = document.getElementById('summary-subtotal');
@@ -222,6 +224,14 @@ function addFeaturedToOrder() {
 function handleFormSubmit(event) {
     event.preventDefault();
 
+    // Require a potion before submitting
+    if (!orderState.basePotion) {
+        document.querySelector('.potion-options').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.potion-options').classList.add('validation-error');
+        setTimeout(() => document.querySelector('.potion-options').classList.remove('validation-error'), 2000);
+        return;
+    }
+
     // Generate order number
     const orderNumber = 'EB-' + Math.floor(Math.random() * 90000 + 10000);
 
@@ -250,6 +260,16 @@ function handleFormSubmit(event) {
         deliveryPrice: 5,
         featuredAdded: false
     };
+
+    // Reset builder visual state
+    document.querySelectorAll('input[name="base-potion"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="size"]').forEach(r => r.checked = false);
+    document.querySelector('input[name="size"][value="vial"]').checked = true;
+    document.querySelectorAll('input[name="ingredient"]').forEach(c => c.checked = false);
+    document.querySelectorAll('input[name="potency"]').forEach(r => r.checked = false);
+    document.querySelector('input[name="potency"][value="standard"]').checked = true;
+    document.getElementById('quantity').value = '1';
+
     updateOrderSummary();
 }
 
