@@ -234,8 +234,23 @@ function handleFormSubmit(event) {
     document.getElementById('delivery-estimate').textContent = deliveryDays;
     modal.classList.add('active');
 
-    // Reset form
+    // Reset form DOM and orderState
     document.getElementById('order-form').reset();
+    orderState = {
+        basePotion: null,
+        basePotionPrice: 0,
+        size: 'vial',
+        sizeMultiplier: 1,
+        potency: 'standard',
+        potencyMultiplier: 1,
+        ingredients: [],
+        ingredientsTotal: 0,
+        quantity: 1,
+        deliveryMethod: 'owl',
+        deliveryPrice: 5,
+        featuredAdded: false
+    };
+    updateOrderSummary();
 }
 
 function closeModal() {
