@@ -229,3 +229,7 @@ test.describe('Bug 19: Wandergram footer link is dead', () => {
     expect(href).not.toContain('wandergram.fake');
   });
 });
+
+test.afterAll(async ({ browser }) => {
+  await browser.close();
+});
