@@ -6,7 +6,7 @@ export class PotionShopPage extends BasePage {
   readonly healingPotionOption: Locator;
   readonly strengthPotionOption: Locator;
   readonly wisdomPotionOption: Locator;
-  readonly speedPotionOption: Locator;
+  readonly invisibilityPotionOption: Locator;
   
   // Delivery option locators
   readonly owlPostDelivery: Locator;
@@ -22,7 +22,7 @@ export class PotionShopPage extends BasePage {
     this.healingPotionOption = this.page.locator('label:has(input[name="base-potion"][value="healing"])');
     this.strengthPotionOption = this.page.locator('label:has(input[name="base-potion"][value="strength"])');
     this.wisdomPotionOption = this.page.locator('label:has(input[name="base-potion"][value="wisdom"])');
-    this.speedPotionOption = this.page.locator('label:has(input[name="base-potion"][value="speed"])');
+    this.invisibilityPotionOption = this.page.locator('label:has(input[name="base-potion"][value="invisibility"])');
     
     this.owlPostDelivery = this.page.locator('label:has(input[name="delivery"][value="owl"])');
     this.dragonExpressDelivery = this.page.locator('label:has(input[name="delivery"][value="dragon"])');
@@ -35,7 +35,7 @@ export class PotionShopPage extends BasePage {
     await super.navigateTo(potionShopUrl);
   }
 
-  async selectBasePotionByValue(value: 'healing' | 'strength' | 'wisdom' | 'speed') {
+  async selectBasePotionByValue(value: 'healing' | 'strength' | 'wisdom' | 'invisibility') {
     const locator = this.page.locator(`label:has(input[name="base-potion"][value="${value}"])`);
     await locator.click();
   }
@@ -52,8 +52,8 @@ export class PotionShopPage extends BasePage {
     await this.wisdomPotionOption.click();
   }
 
-  async selectSpeedPotion() {
-    await this.speedPotionOption.click();
+  async selectInvisibilityPotion() {
+    await this.invisibilityPotionOption.click();
   }
 
   async selectOwlPostDelivery() {
@@ -120,5 +120,74 @@ export class PotionShopPage extends BasePage {
 
   async expectTotalPriceDifference(currentTotal: number, previousTotal: number, expectedDifference: number) {
     expect(currentTotal).toBe(previousTotal + expectedDifference);
+  }
+
+  // Quantity controls
+  async clickQuantityIncrease() {
+    await this.page.locator('.qty-btn', { hasText: '+' }).click();
+  }
+
+  async clickQuantityDecrease() {
+    await this.page.locator('.qty-btn', { hasText: '−' }).click();
+  }
+
+  async getQuantityValue(): Promise<number> {
+    const val = await this.page.locator('#quantity').inputValue();
+    return parseInt(val);
+  }
+
+  // Featured potion
+  async clickAddFeaturedToOrder() {
+    await this.page.locator('.btn-featured').click();
+  }
+
+  async getFeaturedButtonText(): Promise<string | null> {
+    return await this.page.locator('.btn-featured').textContent();
+  }
+
+  async isFeaturedButtonDisabled(): Promise<boolean> {
+    return await this.page.locator('.btn-featured').isDisabled();
+  }
+
+  // Order form
+  async fillOrderForm(name: string, castle: string, kingdom: string) {
+    await this.page.fill('#customer-name', name);
+    await this.page.fill('#castle-name', castle);
+    await this.page.fill('#kingdom', kingdom);
+  }
+
+  async submitOrder() {
+    await this.page.locator('.btn-brew').click();
+  }
+
+  // Confirmation modal
+  async isModalVisible(): Promise<boolean> {
+    return await this.page.locator('#confirmation-modal').evaluate(
+      el => el.classList.contains('active')
+    );
+  }
+
+  async getOrderNumber(): Promise<string | null> {
+    return await this.page.locator('#order-number').textContent();
+  }
+
+  async getDeliveryEstimate(): Promise<string | null> {
+    return await this.page.locator('#delivery-estimate').textContent();
+  }
+
+  async closeModalViaXButton() {
+    await this.page.locator('.modal-close').click();
+  }
+
+  async closeModalViaContinueShopping() {
+    await this.page.locator('.modal-content .btn-primary').click();
+  }
+
+  async closeModalViaEscape() {
+    await this.page.keyboard.press('Escape');
+  }
+
+  async closeModalViaOutsideClick() {
+    await this.page.locator('#confirmation-modal').click({ position: { x: 5, y: 5 } });
   }
 }

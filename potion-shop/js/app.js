@@ -20,7 +20,7 @@ const POTION_NAMES = {
 
 const SIZE_NAMES = {
     vial: 'Vial (1x)',
-    flask: 'Flask (1.5x)',
+    flask: 'Flask (1.35x)',
     bottle: 'Bottle (2.5x)'
 };
 
