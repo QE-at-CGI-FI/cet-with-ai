@@ -191,7 +191,7 @@ function updateOrderSummary() {
         featuredTotal = 34; // 15% off 40 gold = 34 gold
     }
 
-    // Calculate subtotal (ingredients scale with quantity)
+    // Calculate subtotal (both potion and ingredients scale with quantity)
     let subtotal = (potionSubtotal + orderState.ingredientsTotal) * orderState.quantity + featuredTotal;
 
     // Update subtotal display

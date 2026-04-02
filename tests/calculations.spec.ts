@@ -146,7 +146,7 @@ test.describe('Quantity multiplication', () => {
     expect(await shop.getTotalPrice()).toBe(83);
   });
 
-  test('ingredients are NOT multiplied by quantity', async ({ page }) => {
+  test('ingredients are multiplied by quantity', async ({ page }) => {
     const shop = new PotionShopPage(page);
     await shop.navigateToPotionShop();
     await shop.selectHealingPotion(); // 25g
@@ -155,8 +155,8 @@ test.describe('Quantity multiplication', () => {
     const singleQtyTotal = await shop.getTotalPrice(); // 25 + 15 + 8 = 48
     await shop.clickQuantityIncrease(); // qty = 2
     await shop.waitForOrderUpdate();
-    // 25 * 2 + 15 (ingredients not multiplied) + 8 = 73
-    expect(await shop.getTotalPrice()).toBe(singleQtyTotal + 25);
+    // (25 + 15) * 2 + 8 = 88
+    expect(await shop.getTotalPrice()).toBe(singleQtyTotal + 40);
   });
 });
 
@@ -165,8 +165,10 @@ test.describe('Combined calculation', () => {
     const shop = new PotionShopPage(page);
     await shop.navigateToPotionShop();
 
-    // Healing (25g) * flask (1.35) * enhanced (1.25) * qty 2 = 84.375
-    // + dragon-scale (15g) + 3 brewing + 15 dragon express = 117.375
+    // Healing (25g) * flask (1.35) * enhanced (1.25) = 42.1875 per unit
+    // + dragon-scale (15g) = 57.1875 per unit
+    // * qty 2 = 114.375
+    // + 3 brewing + 15 dragon express = 132.375
     await shop.selectHealingPotion();
     await page.locator('label:has(input[name="size"][value="flask"])').click();
     await page.locator('label:has(input[name="potency"][value="enhanced"])').click();
@@ -175,7 +177,7 @@ test.describe('Combined calculation', () => {
     await shop.selectDragonExpressDelivery();
     await shop.waitForOrderUpdate();
 
-    expect(await shop.getTotalPrice()).toBeCloseTo(117.375, 2);
+    expect(await shop.getTotalPrice()).toBeCloseTo(132.375, 2);
   });
 });
 

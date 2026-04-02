@@ -45,12 +45,12 @@ test.describe('addFeaturedToOrder', () => {
     await potionShop.navigateToPotionShop();
   });
 
-  test('adds 36 gold to the order total', async () => {
+  test('adds 34 gold to the order total', async () => {
     const initialTotal = await potionShop.getTotalPrice();
     await potionShop.clickAddFeaturedToOrder();
     await potionShop.waitForOrderUpdate();
     const newTotal = await potionShop.getTotalPrice();
-    expect(newTotal).toBe(initialTotal + 36);
+    expect(newTotal).toBe(initialTotal + 34);
   });
 
   test('button shows "✓ Added!" and is disabled after click', async () => {

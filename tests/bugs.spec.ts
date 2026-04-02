@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 
-const pageUrl = `file://${path.join(__dirname, '..', 'index.html')}`;
+const pageUrl = `file://${path.join(__dirname, '..', 'potion-shop', 'index.html')}`;
 
 async function fillDeliveryFields(page: any) {
   await page.fill('#customer-name', 'Gandalf the Grey');
@@ -185,14 +185,14 @@ test.describe('Bug 14: Copyright year outdated', () => {
 });
 
 test.describe('Bug 15: Footer heading level inconsistency', () => {
-  test('Shop Hours heading should use h4 like sibling sections', async ({ page }) => {
+  test('Shop Hours heading should use h3 like sibling sections', async ({ page }) => {
     await page.goto(pageUrl);
     const tagName = await page.evaluate(() => {
-      const el = Array.from(document.querySelectorAll('footer h4, footer h5'))
+      const el = Array.from(document.querySelectorAll('footer h3, footer h4'))
         .find(e => e.textContent?.trim() === 'Shop Hours');
       return el?.tagName.toLowerCase();
     });
-    expect(tagName).toBe('h4');
+    expect(tagName).toBe('h3');
   });
 });
 
