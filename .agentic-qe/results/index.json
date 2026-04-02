@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created": "2026-04-01T17:37:52.702Z",
-  "updated": "2026-04-01T17:38:04.589Z",
+  "updated": "2026-04-02T12:15:22.592Z",
   "results": [
     {
       "id": "task_66be0fa3-80f7-4cd4-8186-b63e6fe0869d",
@@ -51,6 +51,15 @@
       "timestamp": "2026-04-01T17:38:04.588Z",
       "files": [
         "defects/2026-04-01T17-38-04_prediction.json"
+      ],
+      "summary": {}
+    },
+    {
+      "id": "task_43403e09-a1ad-4547-8aa8-abf70bdfcc95",
+      "type": "test-accessibility",
+      "timestamp": "2026-04-02T12:15:22.588Z",
+      "files": [
+        "accessibility/2026-04-02T12-15-22_test.json"
       ],
       "summary": {}
     }

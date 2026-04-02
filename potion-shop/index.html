@@ -16,10 +16,10 @@
                 <h1 class="shop-name">The Enchanted Brew Shop</h1>
                 <p class="tagline">Handcrafted potions since 1247</p>
             </div>
-            <div class="header-info">
+            <nav aria-label="Main navigation" class="header-info">
                 <span class="delivery-info">🦉 Owl Post: 3-5 days</span>
                 <span class="hours">Open dawn to dusk</span>
-            </div>
+            </nav>
         </div>
     </header>
 
@@ -178,11 +178,12 @@
 
                 <!-- Quantity -->
                 <div class="builder-section">
-                    <h3>Quantity</h3>
-                    <div class="quantity-selector">
-                        <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
-                        <input type="number" id="quantity" value="1" min="1" max="99">
-                        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                    <h3 id="quantity-heading">Quantity</h3>
+                    <div class="quantity-selector" role="group" aria-labelledby="quantity-heading">
+                        <button class="qty-btn" type="button" onclick="changeQuantity(-1)" aria-label="Decrease quantity">−</button>
+                        <label for="quantity" class="visually-hidden">Number of potions</label>
+                        <input type="number" id="quantity" value="1" min="1" max="99" aria-describedby="quantity-heading">
+                        <button class="qty-btn" type="button" onclick="changeQuantity(1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
             </section>
@@ -289,7 +290,7 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary btn-brew" aria-label="Submit">
+                    <button type="submit" class="btn btn-primary btn-brew">
                         🔮 Brew My Order
                     </button>
                 </div>
@@ -340,25 +341,25 @@
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>Shop Hours</h4>
+                <h3>Shop Hours</h3>
                 <p>Open dawn to dusk</p>
                 <p>Closed on full moons</p>
                 <p>& during dragon migrations</p>
             </div>
             <div class="footer-section">
-                <h4>Visit Us</h4>
+                <h3>Visit Us</h3>
                 <p>42 Cauldron Lane</p>
                 <p>Mystic Quarter</p>
                 <p>Avalon, Enchanted Realm</p>
             </div>
             <div class="footer-section">
-                <h4>Contact</h4>
+                <h3>Contact</h3>
                 <p>🦉 Send an owl</p>
                 <p>🔮 Crystal: brew@enchanted.shop</p>
                 <p>📯 Emergency horn available</p>
             </div>
             <div class="footer-section">
-                <h4>Follow Us</h4>
+                <h3>Follow Us</h3>
                 <div class="social-links">
                     <a href="#" class="social-link">SpellBook</a>
                     <a href="#" class="social-link">Wandergram</a>

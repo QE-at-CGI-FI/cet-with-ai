@@ -2,6 +2,19 @@
    The Enchanted Brew Shop - Styles
    ============================================ */
 
+/* Accessibility utility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* CSS Variables */
 :root {
     --color-primary: #4a1c6b;
@@ -135,7 +148,7 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 15px;
     right: -35px;
-    background: #e74c3c;
+    background: #c0392b; /* darkened from #e74c3c for WCAG 1.4.3: 5.10:1 contrast ratio */
     color: white;
     padding: 0.5rem 3rem;
     font-weight: 700;

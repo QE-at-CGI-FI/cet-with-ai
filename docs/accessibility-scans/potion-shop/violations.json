@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "url": "http://localhost:8080",
+    "page": "The Enchanted Brew Shop | Handcrafted Potions Since 1247",
+    "auditDate": "2026-04-02",
+    "standard": "WCAG 2.1 AA",
+    "tools": ["axe-core", "pa11y", "lighthouse"],
+    "toolsSucceeded": 3,
+    "lighthouseScore": 86,
+    "productionReady": false
+  },
+  "violations": [
+    {
+      "id": "label-content-name-mismatch",
+      "wcag": "2.5.3",
+      "level": "A",
+      "impact": "critical",
+      "confirmedBy": ["lighthouse"],
+      "element": "button.btn.btn-primary.btn-brew",
+      "selector": "section.customer-info > form#order-form > div.form-actions > button.btn",
+      "htmlSnippet": "<button type=\"submit\" class=\"btn btn-primary btn-brew\" aria-label=\"Submit\">🔮 Brew My Order</button>",
+      "issue": "aria-label='Submit' overrides visible text 'Brew My Order'. Accessible name must contain visible label text.",
+      "fix": "Remove aria-label attribute entirely",
+      "effort": "0.25h",
+      "roiScore": 320
+    },
+    {
+      "id": "label",
+      "wcag": "4.1.2",
+      "level": "A",
+      "impact": "critical",
+      "confirmedBy": ["axe-core", "pa11y", "lighthouse"],
+      "element": "input#quantity",
+      "selector": "#quantity",
+      "htmlSnippet": "<input type=\"number\" id=\"quantity\" value=\"1\" min=\"1\" max=\"99\">",
+      "issue": "Quantity number input has no associated label element, aria-label, or title. The <h3>Quantity</h3> is not a label.",
+      "fix": "Add <label for=\"quantity\" class=\"visually-hidden\">Number of potions</label>",
+      "effort": "0.5h",
+      "roiScore": 160
+    },
+    {
+      "id": "color-contrast",
+      "wcag": "1.4.3",
+      "level": "AA",
+      "impact": "serious",
+      "confirmedBy": ["axe-core", "lighthouse"],
+      "element": "div.discount-badge",
+      "selector": ".discount-badge",
+      "htmlSnippet": "<div class=\"discount-badge\">15% OFF</div>",
+      "issue": "White text (#ffffff) on red background (#e74c3c) = 3.82:1 contrast ratio. Required: 4.5:1 for normal text.",
+      "currentRatio": "3.82:1",
+      "requiredRatio": "4.5:1",
+      "fix": "Change background-color to #c0392b (achieves 5.10:1)",
+      "effort": "0.5h",
+      "roiScore": 168
+    },
+    {
+      "id": "heading-order",
+      "wcag": "1.3.1",
+      "level": "A",
+      "impact": "moderate",
+      "confirmedBy": ["lighthouse"],
+      "element": "footer h4 elements",
+      "selector": "footer.site-footer > div.footer-content > div.footer-section > h4",
+      "htmlSnippet": "<h4>Shop Hours</h4> (and 3 more h4 elements)",
+      "issue": "Footer uses h4 headings but the preceding heading level in the page is h2. Skips h3.",
+      "fix": "Change all 4 footer <h4> elements to <h3>",
+      "effort": "0.5h",
+      "roiScore": 112
+    },
+    {
+      "id": "nav-landmark-missing",
+      "wcag": "1.3.1",
+      "level": "A",
+      "impact": "moderate",
+      "confirmedBy": ["structural-analysis"],
+      "element": "header links",
+      "issue": "3 links exist in header but no <nav> landmark. Screen reader landmark navigation cannot reach these links.",
+      "fix": "Wrap header links in <nav aria-label=\"Main navigation\">",
+      "effort": "0.25h",
+      "roiScore": 64
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "serious": 1,
+    "moderate": 2,
+    "minor": 0,
+    "totalEstimatedFix": "2h"
+  }
+}

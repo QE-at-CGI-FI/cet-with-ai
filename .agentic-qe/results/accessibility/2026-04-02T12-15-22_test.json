@@ -1,0 +1,9 @@
+{
+  "url": "http://localhost:8080",
+  "standard": "wcag21-aa",
+  "passed": false,
+  "violations": [],
+  "warnings": [],
+  "score": 0,
+  "note": "Accessibility testing requires a browser environment (Puppeteer/Playwright). Use tools like axe-core, pa11y, or Lighthouse CLI for WCAG compliance testing. Example: npx pa11y http://localhost:8080"
+}
